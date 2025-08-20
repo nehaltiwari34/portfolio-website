@@ -1,6 +1,33 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // ============ Theme Toggle ============
+    // ============ Mobile Navigation ============
+    const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+    const sidebar = document.querySelector('.sidebar');
     
+    mobileNavToggle.addEventListener('click', function() {
+        sidebar.classList.toggle('active');
+        const icon = this.querySelector('i');
+        if (sidebar.classList.contains('active')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+        } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
+    });
+    
+    // Close sidebar when clicking on a nav link (on mobile)
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            if (window.innerWidth <= 768) {
+                sidebar.classList.remove('active');
+                mobileNavToggle.querySelector('i').classList.remove('fa-times');
+                mobileNavToggle.querySelector('i').classList.add('fa-bars');
+            }
+        });
+    });
+    
+    // ============ Theme Toggle ============
     const themeCheckbox = document.getElementById('theme-checkbox');
     const themeStyle = document.getElementById('theme-style');
     
@@ -8,22 +35,22 @@ document.addEventListener('DOMContentLoaded', function() {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
         themeCheckbox.checked = true;
-        themeStyle.href = 'dark-mode.css';
+        themeStyle.href = 'css/dark-mode.css';
     }
     
     themeCheckbox.addEventListener('change', function() {
         if (this.checked) {
-            themeStyle.href = 'dark-mode.css';
+            themeStyle.href = 'css/dark-mode.css';
             localStorage.setItem('theme', 'dark');
         } else {
-            themeStyle.href = 'light-mode.css';
+            themeStyle.href = '';
             localStorage.setItem('theme', 'light');
         }
     });
 
     // ============ Typing Animation ============
     const typedTextElement = document.getElementById('typed-text');
-    if (typedTextElement) {  // Only run if element exists
+    if (typedTextElement) {
         const cursorElement = document.querySelector('.cursor');
         
         const skills = [
@@ -79,92 +106,111 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ============ Navigation ============
-    // ====== SCROLL MANAGEMENT FIX ======
-const sections = document.querySelectorAll('.section');
-const navLinks = document.querySelectorAll('.nav-link');
-let isProgrammaticScroll = false;
-let currentSection = 'home';
-const sectionMargin = 100; // Adjust this value as needed
+    const sections = document.querySelectorAll('.section');
+    let isProgrammaticScroll = false;
+    let currentSection = 'home';
+    const sectionMargin = 100; // Adjust this value as needed
 
-// Function to set active section
-function setActiveSection(sectionId) {
-    if (currentSection === sectionId) return;
-    currentSection = sectionId;
-    
-    // Update navigation
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${sectionId}`) {
-            link.classList.add('active');
-        }
-    });
-    
-    // Update sections
-    sections.forEach(section => {
-        section.classList.remove('active-section');
-    });
-    document.getElementById(sectionId).classList.add('active-section');
-}
-
-// Handle scroll events
-function handleScroll() {
-    if (isProgrammaticScroll) return;
-    
-    const scrollPosition = window.scrollY + (window.innerHeight / 4);
-    let newSection = currentSection;
-    
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionBottom = sectionTop + section.offsetHeight;
+    // Function to set active section
+    function setActiveSection(sectionId) {
+        if (currentSection === sectionId) return;
+        currentSection = sectionId;
         
-        if (scrollPosition >= sectionTop - sectionMargin && 
-            scrollPosition < sectionBottom - sectionMargin) {
-            newSection = section.id;
-        }
-    });
-    
-    if (newSection !== currentSection) {
-        setActiveSection(newSection);
-    }
-}
-
-// Debounced scroll event
-let scrollTimeout;
-window.addEventListener('scroll', () => {
-    if (isProgrammaticScroll) return;
-    
-    clearTimeout(scrollTimeout);
-    scrollTimeout = setTimeout(handleScroll, 100);
-});
-
-// Click navigation
-navLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href').substring(1);
-        const targetSection = document.getElementById(targetId);
-        
-        isProgrammaticScroll = true;
-        window.scrollTo({
-            top: targetSection.offsetTop,
-            behavior: 'smooth'
+        // Update navigation
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${sectionId}`) {
+                link.classList.add('active');
+            }
         });
         
-        setActiveSection(targetId);
+        // Update sections
+        sections.forEach(section => {
+            section.classList.remove('active-section');
+        });
+        document.getElementById(sectionId).classList.add('active-section');
+    }
+
+    // Handle scroll events
+    function handleScroll() {
+        if (isProgrammaticScroll) return;
         
-        setTimeout(() => {
-            isProgrammaticScroll = false;
-        }, 1000);
+        const scrollPosition = window.scrollY + (window.innerHeight / 4);
+        let newSection = currentSection;
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionBottom = sectionTop + section.offsetHeight;
+            
+            if (scrollPosition >= sectionTop - sectionMargin && 
+                scrollPosition < sectionBottom - sectionMargin) {
+                newSection = section.id;
+            }
+        });
+        
+        if (newSection !== currentSection) {
+            setActiveSection(newSection);
+        }
+    }
+
+    // Debounced scroll event
+    let scrollTimeout;
+    window.addEventListener('scroll', () => {
+        if (isProgrammaticScroll) return;
+        
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(handleScroll, 100);
     });
-});
-document.querySelector('.secondary-btn').addEventListener('click', function(e) {
-  // Optional: Track downloads with analytics
-  console.log('Resume downloaded!');
-});
-// Contact Form Handling
-document.addEventListener('DOMContentLoaded', function() {
-    const contactForm = document.getElementById('contact-form');
+
+    // Click navigation
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+            
+            isProgrammaticScroll = true;
+            window.scrollTo({
+                top: targetSection.offsetTop,
+                behavior: 'smooth'
+            });
+            
+            setActiveSection(targetId);
+            
+            setTimeout(() => {
+                isProgrammaticScroll = false;
+            }, 1000);
+        });
+    });
     
+    // ============ FIXED: View My Work Button ============
+    const viewWorkBtn = document.getElementById('view-work-btn');
+    if (viewWorkBtn) {
+        viewWorkBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const portfolioSection = document.getElementById('portfolio');
+            
+            isProgrammaticScroll = true;
+            window.scrollTo({
+                top: portfolioSection.offsetTop,
+                behavior: 'smooth'
+            });
+            
+            setActiveSection('portfolio');
+            
+            setTimeout(() => {
+                isProgrammaticScroll = false;
+            }, 1000);
+        });
+    }
+    
+    // Resume download tracking
+    document.querySelector('.secondary-btn').addEventListener('click', function(e) {
+        console.log('Resume downloaded!');
+    });
+    
+    // Contact Form Handling
+    const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
@@ -180,52 +226,13 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             // Here you would normally send data to a server
-            // For now, we'll show a success message
             alert('Message sent successfully! I\'ll get back to you soon.');
             
             // Reset form
             contactForm.reset();
-            
-            // Optional: Send to Formspree, EmailJS, or your backend
-            // sendEmail(data);
         });
     }
-});
-// Smooth scrolling for navigation
-document.addEventListener('DOMContentLoaded', function() {
-    // Navigation links
-    const navLinks = document.querySelectorAll('.nav-link');
     
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href').substring(1);
-            const targetSection = document.getElementById(targetId);
-            
-            if (targetSection) {
-                targetSection.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-    
-    // View My Work button
-    const viewWorkBtn = document.getElementById('view-work-btn');
-    if (viewWorkBtn) {
-        viewWorkBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            document.getElementById('portfolio').scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        });
-    }
-});
-
-
-// Initialize
-setActiveSection('home');
+    // Initialize
+    setActiveSection('home');
 });
