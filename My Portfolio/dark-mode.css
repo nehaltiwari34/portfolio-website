@@ -1,0 +1,52 @@
+:root {
+    --primary-color: #3b82f6;
+    --secondary-color: #1e293b;
+    --text-color: #f8fafc;
+    --light-text: #f8fafc;
+    --bg-color: #0f172a;
+    --sidebar-bg: #111827;
+    --card-bg: #1e293b;
+    --border-color: #334155;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+}
+
+.tagline {
+    color: #94a3b8;
+}
+
+.nav-link {
+    color: var(--light-text);
+}
+
+.social-links a {
+    color: var(--light-text);
+}
+
+.hero-content h3 {
+    color: #94a3b8;
+}
+
+.portfolio-info p {
+    color: #94a3b8;
+}
+
+.date {
+    color: #94a3b8;
+}
+.dark-mode .contact-form {
+    background-color: var(--card-bg-dark);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .form-group input,
+.dark-mode .form-group textarea {
+    background-color: var(--bg-color-dark);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-color-dark);
+}
+
+.dark-mode .form-group input:focus,
+.dark-mode .form-group textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
