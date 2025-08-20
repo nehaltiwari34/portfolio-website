@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nehal Tiwari | Web Developer & Designer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link id="theme-style" rel="stylesheet" href="dark-mode.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+      
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="profile-container">
+                <img src="images/back profile.jpeg" alt="Nehal Tiwari" class="profile-img">
+                <h1 class="name">Nehal Tiwari</h1>
+                <p class="tagline">Web Developer & UI/UX Designer</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/nehal-tiwari-619902329?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/nehaltiwari34/Nehal-Tiwari.git" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="mailto:nehaltiwari34@gmail.com"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#home" class="nav-link active"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#about" class="nav-link"><i class="fas fa-user"></i> About</a></li>
+                    <li><a href="#skills" class="nav-link"><i class="fas fa-code"></i> Skills</a></li>
+                    <li><a href="#portfolio" class="nav-link"><i class="fas fa-briefcase"></i> Portfolio</a></li>
+                    <li><a href="#services" class="nav-link"><i class="fas fa-cog"></i> Services</a></li>
+                    <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="theme-switcher">
+                <span class="theme-icon"><i class="fas fa-moon"></i></span>
+                <span class="theme-text">Dark Mode</span>
+                <div class="theme-toggle">
+                    <input type="checkbox" id="theme-checkbox">
+                    <label for="theme-checkbox" class="theme-label"></label>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Home Section -->
+            <!-- Hero Section -->
+<section id="home" class="section active-section">
+    <div class="hero-container">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <div class="availability-badge">
+                <span>Available for Internship Opportunities</span>
+            </div>
+            
+            <h1>Nehal Tiwari</h1>
+            <h2 class="typing-text">I'm a  <span id="typed-text"></span><span class="cursor">|</span></h2>
+            
+            <p class="hero-description">
+                Passionate about creating beautiful, functional websites and 
+                solving complex problems with innovative solutions. Currently 
+                pursuing BTech in Computer Science Engineering at Bansal 
+                Institute of Engineering and Technology, Lucknow.
+            </p>
+            
+            <div class="hero-cta">
+                <!-- <a href="#portfolio" class="btn primary-btn" id="view-work-btn">
+  View My Work <span class="icon">→</span>
+</a> -->
+
+                <a href="assests/Resume  copy.pdf" class="btn secondary-btn">Download Resume <span class="icon">↓</span></a>
+            </div>
+            
+            <p class="hero-footer">Let's connect and build something amazing together</p>
+        </div>
+    </div>
+</section>
+
+            <!-- About Section -->
+<section id="about" class="section">
+    <h2 class="section-title">About <span class="highlight">Me</span></h2>
+    
+    <div class="about-container">
+        <!-- Main About Content -->
+        <div class="about-intro">
+            <p>A passionate Computer Science student with a strong foundation in web development, UI/UX design, and problem-solving, always eager to learn and create innovative solutions.</p>
+            <div class="divider"></div>
+        </div>
+        
+        <!-- Get to Know Me Section -->
+        <div class="about-details">
+            <h3>Get to Know Me</h3>
+            <p>I'm Nehal Tiwari, a dedicated Computer Science Engineering student from Lucknow, currently pursuing my Bachelor's degree at Bansal Institute of Engineering and Technology. My journey in technology began with a curiosity about how websites work, which has evolved into a passion for creating beautiful, functional digital experiences.</p>
+            <p>Beyond coding, I believe in the power of good design and effective communication. I enjoy exploring the intersection of technology and creativity, whether it's through developing intuitive user interfaces or solving complex algorithmic challenges.</p>
+            
+            <ul class="about-checklist">
+                <li class="checked">Lucknow, Uttar Pradesh</li>
+                <li class="unchecked">Available for Internship Opportunities</li>
+            </ul>
+        </div>
+        
+        <!-- Education Section -->
+        <div class="education-section">
+            <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+            <div class="education-item">
+                <div class="edu-icon">🎓</div>
+                <div class="edu-details">
+                    <h4>Bachelor of Technology</h4>
+                    <p>Computer Science Engineering</p>
+                    <p class="edu-institute">Bansal Institute of Engineering and Technology, Lucknow</p>
+                    <p class="edu-duration">2022 - 2026</p>
+                    <p class="edu-focus">Focusing on software development, data structures, algorithms,Git,GitHub and modern web technologies. Actively participating in coding competitions and technical workshops.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+            <!-- Skills Section -->
+<section id="skills" class="section">
+    <h2 class="section-title">Skills <span class="highlight">& Expertise</span></h2>
+    
+    <div class="skills-container">
+        <!-- Technical Skills -->
+        <div class="skills-category">
+            <h3><i class="fas fa-laptop-code"></i> Technical Skills</h3>
+            <div class="skills-grid">
+                <div class="skill-item">HTML5 & CSS3</div>
+                <div class="skill-item">JavaScript</div>
+                <div class="skill-item">React.js</div>
+                <div class="skill-item">Node.js & Express.js</div>
+                <div class="skill-item">Java (DSA)</div>
+                <div class="skill-item">Python</div>
+                <div class="skill-item">C++</div>
+                <div class="skill-item">Git & GitHub</div>
+                <div class="skill-item">Bootstrap</div>
+                <div class="skill-item">OOP Design</div>
+            </div>
+        </div>
+        
+        <!-- Design Skills -->
+        <div class="skills-category">
+            <h3><i class="fas fa-palette"></i> Design Skills</h3>
+            <div class="skills-grid">
+                <div class="skill-item">UI/UX Fundamentals</div>
+                <div class="skill-item">Canva Graphic Design</div>
+                <div class="skill-item">Website Creation</div>
+                <div class="skill-item">Post Creation</div>
+                <div class="skill-item">Visual Hierarchy</div>
+                <div class="skill-item">Color Theory</div>
+            </div>
+        </div>
+        
+        <!-- Soft Skills -->
+        <div class="skills-category">
+            <h3><i class="fas fa-comments"></i> Soft Skills</h3>
+            <div class="skills-grid">
+                <div class="skill-item">Strong Communication</div>
+                <div class="skill-item">Public Speaking</div>
+                <div class="skill-item">Problem Solving</div>
+                <div class="skill-item">Leadership</div>
+                <div class="skill-item">Engineering Mindset</div>
+                <div class="skill-item">Team Collaboration</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+            <!-- Portfolio Section -->
+<section id="portfolio" class="section">
+  <h2 class="section-title">My <span class="highlight">Projects</span></h2>
+  <div class="portfolio-container">
+    <!-- Featured Project -->
+    <div class="project-card featured">
+      <div class="project-badge">Interactive Demo Available</div>
+      <h3>Portfolio Website</h3>
+      <p class="project-status completed">Completed</p>
+      <p>A modern, responsive portfolio website showcasing my skills and projects. Built with HTML5, CSS3 (with dark mode), and JavaScript, featuring smooth scrolling and animations.</p>
+      <div class="tech-stack">
+        <span>HTML5</span>
+        <span>CSS3</span>
+        <span>JavaScript</span>
+        <span>Git</span>
+      </div>
+      <div class="project-links">
+        <a href="https://nehaltiwari34.github.io/Portfolio" class="btn primary-btn">Live Demo</a>
+        <a href="https://github.com/nehaltiwari34/Nehal-Tiwari.git" class="btn secondary-btn" target="_blank">View Code</a>
+      </div>
+    </div>
+    <!-- Other Projects -->
+    <div class="project-card">
+      <h3>Mission Shaurya</h3>
+      <p class="project-status in-progress">In Progress</p>
+      <p>An all in one defence portal designed to guide aspirants with career paths,job vacancies,lifestyle insights,and motivational content about the armed forces.</p>
+      <div class="tech-stack">
+        <span>HTML5</span>
+        <span>CSS3</span>
+        <span>JavaScript</span>
+        <span>React.js</span>
+        <span>Node.js</span>
+        <span>Bootstrap/Tailwind CSS</span>
+        <span>API integration</span>
+        <span>Git/GitHub</span>
+        <span>UI/UX principles</span>
+      </div>
+      <!-- <div class="project-links">
+        <a href="#" class="btn disabled-btn">Preview</a>
+        <a href="#" class="btn secondary-btn">Code</a>
+      </div> -->
+    </div>
+
+    <div class="project-card">
+      <h3>Task Management App</h3>
+      <p class="project-status in-progress">In Progress</p>
+      <p>A collaborative app with drag-and-drop interface and real-time updates.</p>
+      <div class="tech-stack">
+        <span>React</span>
+        <span>Firebase</span>
+        <span>Styled Components</span>
+      </div>
+      <!-- <div class="project-links">
+        <a href="#" class="btn disabled-btn">Preview</a>
+        <a href="#" class="btn secondary-btn">Code</a>
+      </div> -->
+    </div>
+  </div>
+
+  <!-- GitHub CTA -->
+  <div class="github-cta">
+    <p>Want to see more? I’m constantly working on new projects. Check out my GitHub for updates!</p>
+    <a href="https://github.com/nehaltiwari34/Nehal-Tiwari.git" class="btn primary-btn" target="_blank">View GitHub Profile</a>
+  </div>
+</section>
+
+            <!-- Services Section -->
+<section id="services" class="section">
+    <h2 class="section-title">My <span class="highlight">Services</span></h2>
+    
+    <p class="services-intro">
+        I offer a range of web development and design services, from creating beautiful websites to optimizing user experiences. 
+        Currently building my expertise while delivering quality work.
+    </p>
+    
+    <div class="services-container">
+        <!-- Website Development -->
+        <div class="service-card">
+            <div class="service-icon">
+                <i class="fas fa-code"></i>
+            </div>
+            <h3>Website Development <span class="skill-level intermediate">Advanced</span></h3>
+            <p>Custom websites built with modern technologies like React, Node.js, and responsive design principles.</p>
+            <ul class="service-features">
+                <li>Responsive Design <span class="skill-proficiency high">★★★★☆</span></li>
+                <li>Modern UI/UX <span class="skill-proficiency medium">★★★☆☆</span></li>
+                <li>Fast Performance <span class="skill-proficiency medium">★★★☆☆</span></li>
+                <li>SEO Optimized <span class="skill-proficiency low">★★☆☆☆</span></li>
+            </ul>
+        </div>
+        
+        <!-- UI/UX Design -->
+        <div class="service-card">
+            <div class="service-icon">
+                <i class="fas fa-pencil-ruler"></i>
+            </div>
+            <h3>UI/UX Design <span class="skill-level intermediate">Beginner</span></h3>
+            <p>Creating intuitive and visually appealing user interfaces with focus on user experience.</p>
+            <ul class="service-features">
+                <li>User Research <span class="skill-proficiency medium">★★★☆☆</span></li>
+                <li>Wireframing <span class="skill-proficiency high">★★★★☆</span></li>
+                <li>Prototyping <span class="skill-proficiency medium">★★★☆☆</span></li>
+                <li>Visual Design <span class="skill-proficiency high">★★★★☆</span></li>
+            </ul>
+        </div>
+        
+        <!-- Frontend Development -->
+        <div class="service-card">
+            <div class="service-icon">
+                <i class="fas fa-laptop"></i>
+            </div>
+            <h3>Frontend Development <span class="skill-level intermediate">Advanced</span></h3>
+            <p>Building interactive web applications using React.js and modern CSS frameworks.</p>
+            <ul class="service-features">
+                <li> HTMl5 <span class="skill-proficiency high">★★★★☆</span></li>
+                <li>React.js <span class="skill-proficiency medium">★★★☆☆</span></li>
+                <li>JavaScript <span class="skill-proficiency high">★★★★☆</span></li>
+                <li> CSS <span class="skill-proficiency high">★★★★☆</span></li>
+                <li>State Management <span class="skill-proficiency medium">★★★☆☆</span></li>
+            </ul>
+        </div>
+        
+        <!-- Responsive Design -->
+        <div class="service-card">
+            <div class="service-icon">
+                <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h3>Responsive Design <span class="skill-level advanced">Intermediate</span></h3>
+            <p>Ensuring perfect display and functionality across all devices and screen sizes.</p>
+            <ul class="service-features">
+                <li>Mobile First <span class="skill-proficiency high">★★★★★</span></li>
+                <li>Cross-Browser <span class="skill-proficiency high">★★★★☆</span></li>
+                <li>Touch Friendly <span class="skill-proficiency medium">★★★☆☆</span></li>
+                <li>Performance <span class="skill-proficiency medium">★★★☆☆</span></li>
+            </ul>
+        </div>
+        
+        <!-- SEO Optimization -->
+        <div class="service-card">
+            <div class="service-icon">
+                <i class="fas fa-search"></i>
+            </div>
+            <h3>SEO Optimization <span class="skill-level beginner">Beginner</span></h3>
+            <p>Implementing best practices for search engine visibility and ranking.</p>
+            <ul class="service-features">
+                <li>Meta Tags <span class="skill-proficiency medium">★★★☆☆</span></li>
+                <li>Site Speed <span class="skill-proficiency low">★★☆☆☆</span></li>
+                <li>Mobile Friendly <span class="skill-proficiency high">★★★★☆</span></li>
+                <li>Content Strategy <span class="skill-proficiency low">★☆☆☆☆</span></li>
+            </ul>
+        </div>
+        
+        <!-- Performance Optimization -->
+        <div class="service-card">
+            <div class="service-icon">
+                <i class="fas fa-tachometer-alt"></i>
+            </div>
+            <h3>Performance Optimization <span class="skill-level beginner">Beginner</span></h3>
+            <p>Optimizing websites for speed using modern techniques.</p>
+            <ul class="service-features">
+                <li>Code Splitting <span class="skill-proficiency low">★★☆☆☆</span></li>
+                <li>Lazy Loading <span class="skill-proficiency medium">★★★☆☆</span></li>
+                <li>Caching <span class="skill-proficiency low">★☆☆☆☆</span></li>
+                <li>Bundle Optimization <span class="skill-proficiency low">★☆☆☆☆</span></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Add this right before closing </section> tag in services section -->
+<div class="process-section">
+    <h3 class="process-title">My <span class="highlight">Process</span></h3>
+    
+    <div class="process-steps">
+        <!-- Step 1 -->
+        <div class="process-step">
+            <div class="step-number">01</div>
+            <div class="step-content">
+                <h4>Discovery</h4>
+                <p>Understanding your requirements, goals, and target audience to create the perfect solution.</p>
+            </div>
+        </div>
+        
+        <!-- Step 2 -->
+        <div class="process-step">
+            <div class="step-number">02</div>
+            <div class="step-content">
+                <h4>Planning</h4>
+                <p>Creating wireframes, selecting technologies, and planning the development approach.</p>
+            </div>
+        </div>
+        
+        <!-- Step 3 -->
+        <div class="process-step">
+            <div class="step-number">03</div>
+            <div class="step-content">
+                <h4>Development</h4>
+                <p>Building your project with clean code, responsive design, and attention to detail.</p>
+            </div>
+        </div>
+        
+        <!-- Step 4 -->
+        <div class="process-step">
+            <div class="step-number">04</div>
+            <div class="step-content">
+                <h4>Delivery</h4>
+                <p>Testing thoroughly, gathering feedback, and delivering a polished final product.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="growth-section">
+    <h3>Growing <span class="highlight">Every Day</span></h3>
+    <p>As a BTech student, I'm continuously learning and expanding my skill set. While I may be at the beginning of my journey, I bring fresh perspectives, enthusiasm, and a commitment to delivering quality work that exceeds expectations.</p>
+</div>
+</section>
+
+
+            <!-- Contact Section -->
+
+<section id="contact" class="section">
+    <h2 class="section-title">Get In <span class="highlight">Touch</span></h2>
+    
+    <div class="contact-container">
+        <div class="contact-intro">
+            <p>I'm always excited to discuss new opportunities, collaborate on projects, or simply connect with fellow developers and designers. Let's start a conversation!</p>
+        </div>
+        
+        <div class="contact-content">
+            <!-- Contact Form -->
+            <div class="contact-form-container">
+                <h3>Send a Message</h3>
+                <form id="contactForm" class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" placeholder="Your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="your.email@example.com" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" placeholder="What's this about?">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="5" placeholder="Tell me about your project" required></textarea>
+                    </div>
+                    <button type="submit" class="btn primary-btn">Send Message</button>
+                </form>
+            </div>
+            
+            <!-- Contact Info -->
+            <div class="contact-info-container">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <a href="mailto:nehaltiwari34@gmail.com">nehaltiwari34@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <a href="tel:+919026546685">+91 9026546685</a>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <span>Lucknow, Uttar Pradesh</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="social-info">
+                    <h3>Follow Me</h3>
+                    <div class="info-item">
+                        <i class="fab fa-github"></i>
+                        <div>
+                            <h4>GitHub</h4>
+                            <a href="https://github.com/nehaltiwari34/Nehal-Tiwari.git" target="_blank">@nehal-tiwari</a>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fab fa-linkedin"></i>
+                        <div>
+                            <h4>LinkedIn</h4>
+                            <a href="https://www.linkedin.com/in/nehal-tiwari-619902329?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">Nehal Tiwari</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="availability-info">
+                    <h3>Available for Opportunities</h3>
+                    <p>Currently seeking internship opportunities and freelance projects. I typically respond within 24 hours!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+ 
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
